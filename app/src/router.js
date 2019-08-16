@@ -1,25 +1,40 @@
-import Vue from 'vue'
-import Router from 'vue-router'
-import Home from './views/Home.vue'
+import Vue from "vue";
+import Router from "vue-router";
+import Home from "./views/index.vue";
+import Person from "./views/Personal.vue";
+import SameCity from "./views/City.vue";
+import Hotnews from "./views/Hot.vue";
 
-Vue.use(Router)
+const originalPush = Router.prototype.push
+Router.prototype.push = function push(location) {
+  return originalPush.call(this, location).catch(err => err)
+}
+
+Vue.use(Router);
 
 export default new Router({
-  mode: 'history',
+  mode: "history",
   base: process.env.BASE_URL,
   routes: [
     {
-      path: '/',
-      name: 'home',
+      path: "/",
+      name: "home",
       component: Home
     },
     {
-      path: '/about',
-      name: 'about',
-      // route level code-splitting
-      // this generates a separate chunk (about.[hash].js) for this route
-      // which is lazy-loaded when the route is visited.
-      component: () => import(/* webpackChunkName: "about" */ './views/About.vue')
+      path: "/person",
+      name: "personal",
+      component: Person
+    },
+    {
+      path:'/samecity',
+      name:'city',
+      component:SameCity
+    },
+    {
+      path:"/hot",
+      name:'hotnews',
+      component:Hotnews
     }
   ]
-})
+});
