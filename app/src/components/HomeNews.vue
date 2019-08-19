@@ -1,14 +1,18 @@
 <template>
   <div>
-      same
+
   </div>
 </template>
 
 <script>
 export default {
-  name: "sameCity",
+  name: "homenews",
   data() {
-    return {};
+    return {
+      props: {
+
+      }
+    };
   }
 };
 </script>

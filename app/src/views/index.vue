@@ -1,7 +1,7 @@
 <template>
   <div>
-    <router-view />
-    <Top></Top>
+    <Top @changePage="Page"></Top>
+    
   </div>
 </template>
 
@@ -11,10 +11,18 @@ import Top from "../components/Top";
 export default {
   name: "home",
   data() {
-    return {};
+    return {
+      top: ""
+    };
   },
   components: {
     Top
+  },
+  methods: {
+    Page(topTitle) {
+      this.top =topTitle
+      console.log(this.top);
+    }
   }
 };
 </script>

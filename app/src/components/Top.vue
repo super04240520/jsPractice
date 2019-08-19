@@ -1,12 +1,10 @@
 <template>
- 
- <van-tabs @click="onClick" swipeable>
-  <van-tab title="时势">内容 1</van-tab>
-  <van-tab title="体育">内容 2</van-tab>
-  <van-tab title="娱乐">内容3</van-tab>
-  <van-tab title="音乐">内容 4</van-tab>
+
+ <van-tabs  @click="onClick">
+  <van-tab   v-for="index in arr" :key="index.id" :title="index.name">
+    <div class=""></div>
+  </van-tab>
 </van-tabs>
- 
 </template>
 
 <script>
@@ -17,12 +15,15 @@ export default {
   name: "top",
   data() {
     return {
-      
-      
+       arr:[{name:'时势',id:1},{name:'娱乐',id:2},{name:'体育',id:3},{name:'音乐',id:4}],
+       
     };
   },
   methods: {
-    onClick(){
+    onClick(name,title){
+    var topTitle = title
+      this.$emit('changePage',topTitle);
+
       
     }
     
