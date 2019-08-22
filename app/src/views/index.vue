@@ -1,7 +1,7 @@
 <template>
   <div>
-    <Top @changePage="Page"></Top>
-    
+    <Top ></Top>
+   
   </div>
 </template>
 
@@ -19,10 +19,7 @@ export default {
     Top
   },
   methods: {
-    Page(topTitle) {
-      this.top =topTitle
-      console.log(this.top);
-    }
+   
   }
 };
 </script>

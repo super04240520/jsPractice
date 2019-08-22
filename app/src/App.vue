@@ -1,7 +1,6 @@
 <template>
   <div id="app">
     <router-view/>
-    
     <Bottom></Bottom>
   </div>
 </template>
@@ -21,7 +20,6 @@ export default {
 </script>
 <style>
 #app {
-
   height: 100px;
   padding:20px 50px 0 50px;
 }
